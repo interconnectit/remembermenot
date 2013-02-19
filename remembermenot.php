@@ -6,6 +6,7 @@ Plugin URI: https://github.com/shrkey/remembermenot
 Description: Completely removes the Remember Me functionality from WordPress
 Author: Shrkey
 Author URI: http://shrkey.com
+Text_domain: shrkey
 
 Copyright 2013 (email: team@shrkey.com)
 

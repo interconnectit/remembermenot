@@ -5,7 +5,7 @@ if( !class_exists( 'remembermenotpublic' ) ) {
 	class remembermenotpublic {
 
 		function __construct() {
-			//login_form
+			//do_action('login_form');
 		}
 
 		function remembermenotpublic() {
