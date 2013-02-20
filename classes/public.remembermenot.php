@@ -34,9 +34,7 @@ if( !class_exists( 'remembermenotpublic' ) ) {
 		function process_login_form_cache( $content ) {
 
 			$content = preg_replace( '/<p class="forgetmenot">(.*)<\/p>/', '', $content);
-			/*
-			//<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_attr_e('Remember Me'); ?></label></p>
-			*/
+
 			return $content;
 
 		}
