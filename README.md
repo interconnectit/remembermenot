@@ -4,7 +4,7 @@ Completely remove the "Remember Me" option from the WordPress Login form.
 
 ## Description
 
-Completely remove the "Remember Me" option from the WordPress Login form. The "Remember Me" option is useful to keep you logged into your WordPress account on your personal computer.
+The "Remember Me" option is useful to keep you logged into your WordPress account on your personal computer.
 
 However, if it is used on a public, or non-secure computer then, as it will leave an account logged in on the computer for 2 weeks, it can expose your site to unauthorised users.
 
