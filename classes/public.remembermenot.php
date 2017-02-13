@@ -1,46 +1,43 @@
 <?php
 
-if( !class_exists( 'remembermenotpublic' ) ) {
+if (!class_exists('remembermenotpublic')) {
+    class remembermenotpublic
+    {
+        public function __construct()
+        {
 
-	class remembermenotpublic {
+            // Add the hook into the login_form
+            add_action('login_form', array(&$this, 'start_login_form_cache'), 99);
+            // Reset any attempt to set the remember option
+            add_action('login_head', array(&$this, 'reset_remember_option'), 99);
+        }
 
-		function __construct() {
+        public function remembermenotpublic()
+        {
+            $this->__construct();
+        }
 
-			// Add the hook into the login_form
-			add_action( 'login_form', array( &$this, 'start_login_form_cache' ), 99 );
-			// Reset any attempt to set the remember option
-			add_action( 'login_head', array( &$this, 'reset_remember_option' ), 99 );
-		}
+        public function reset_remember_option()
+        {
 
-		function remembermenotpublic() {
-			$this->__construct();
-		}
+            // Remove the rememberme post value
+            if (isset($_POST['rememberme'])) {
+                unset($_POST['rememberme']);
+            }
+        }
 
-		function reset_remember_option() {
+        public function start_login_form_cache()
+        {
+            ob_start(array(&$this, 'process_login_form_cache'));
+        }
 
-			// Remove the rememberme post value
-			if( isset($_POST['rememberme']) ) {
-				unset( $_POST['rememberme'] );
-			}
+        public function process_login_form_cache($content)
+        {
+            $content = preg_replace('/<p class="forgetmenot">(.*)<\/p>/', '', $content);
 
-		}
-
-		function start_login_form_cache() {
-
-			ob_start( array( &$this, 'process_login_form_cache' ) );
-
-		}
-
-		function process_login_form_cache( $content ) {
-
-			$content = preg_replace( '/<p class="forgetmenot">(.*)<\/p>/', '', $content);
-
-			return $content;
-
-		}
-
-	}
-
+            return $content;
+        }
+    }
 }
 
 $remembermenotpublic = new remembermenotpublic();

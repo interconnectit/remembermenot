@@ -26,8 +26,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 // Include the plugin functions
-require_once('includes/functions.php');
+require_once 'includes/functions.php';
 
-if( shrkey_on_login_page() ) {
-	require_once('classes/public.remembermenot.php');
+if (shrkey_on_login_page()) {
+    require_once 'classes/public.remembermenot.php';
 }
