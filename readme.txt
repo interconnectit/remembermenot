@@ -3,7 +3,7 @@ Contributors: shrkey
 Tags: security, remember me, login
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Completely remove the "Remember Me" option from the WordPress Login form.
 
