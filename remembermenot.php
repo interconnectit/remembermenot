@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Remember Me Not
-Version: 1.0
+Version: 1.1
 Plugin URI: https://github.com/shrkey/remembermenot
 Description: Completely removes the Remember Me functionality from WordPress
 Author: Shrkey
@@ -25,9 +25,11 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-// Include the plugin functions
-require_once('includes/functions.php');
+$root_dir = __DIR__;
 
-if( shrkey_on_login_page() ) {
-	require_once('classes/public.remembermenot.php');
+// Include the plugin functions
+require_once( $root_dir . '/includes/functions.php' );
+
+if ( remembermenot_on_login_page() ) {
+	require_once( $root_dir . '/classes/public.remembermenot.php' );
 }
